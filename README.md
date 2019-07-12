@@ -21,6 +21,7 @@ A blog will have:
       slug: "the-era-of-e-sports" //slug should be unique and lowercase
       summary: "A short description." // no more than 120 characters
       author: "Jim Bob" 
+      img: "https://placehold.it"
       body: "A bunch of stuff about E-Sports", 
       tags: ["sports", "tech"]
     }
