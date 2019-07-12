@@ -48,6 +48,13 @@ export default class BlogController {
     } catch (error) { next(error) }
   }
 
+  async createBlog(req, res, next) {
+    try {
+      let blog = await _blogsService.create(req.body)
+      res.send(blog)
+    } catch (error) { next(error) }
+  }
+
   async editBlogById(req, res, next) {
     try {
       let editedBlog = await _blogsService.findByIdAndUpdate(req.params.blogId, req.body, { new: true })
@@ -72,6 +79,8 @@ export default class BlogController {
       .get('', this.getBlogsByTag)
       //NOTE Retrieve a blog by id:
       .get('/:blogId', this.getOneBlogById)
+      //NOTE Create a blog:
+      .post('', this.createBlog)
       //NOTE Edit a blog by id:
       .put('/:blogId', this.editBlogById)
       //NOTE Delete a blog by id:
