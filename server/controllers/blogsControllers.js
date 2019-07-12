@@ -64,17 +64,17 @@ export default class BlogController {
 
   constructor() {
     this.router = express.Router()
-      // Retrieve all blogs:
+      //NOTE Retrieve all blogs:
       .get('', this.getAllBlogs)
-      // Retrieve blogs by query for title(slug):
+      //NOTE Retrieve blogs by query for title(slug):
       .get('', this.getBlogsBySlug)
-      // Retrieve all blogs by query for a tag:
+      //NOTE Retrieve all blogs by query for a tag:
       .get('', this.getBlogsByTag)
-      // Retrieve a blog by id:
+      //NOTE Retrieve a blog by id:
       .get('/:blogId', this.getOneBlogById)
-      // Edit a blog:
+      //NOTE Edit a blog by id:
       .put('/:blogId', this.editBlogById)
-      // Delete a blog:
+      //NOTE Delete a blog by id:
       .delete('/:blogId', this.deleteBlogById)
   }
 }
